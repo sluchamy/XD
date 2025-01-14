@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        canvas {
+            transform: scale(1.1);
+            display: block;
+            margin: 0 auto;
+            animation: shakingg 10s infinite cubic-bezier(.32,0,.74,1);
+        }
+
+        body, canvas {
+            background: url("https://static.vecteezy.com/system/resources/previews/030/671/355/non_2x/navy-blue-background-high-quality-free-photo.jpg");
+            background-size: cover;
+        }
+
+        #config-panel {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            position: absolute;
+            bottom: 60px;
+            right: 10px;
+            outline: solid white 1px;
+            display: none;
+        }
+
+        #config-panel input, #config-panel select, button {
+            color: black;
+        }
+        
+        #st {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px 0 0 50px;
+            transform: scale(2);
+            opacity: 0;
+            transform-origin: bottom right;
+            transition: .2s ease-out;
+        }
+
+        #st:hover {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        @keyframes shakingg {
+            0% { transform: rotate(-.2deg) translate(0px, 10px); }
+            10% { transform: rotate(.3deg) translate(0px, 10px); }
+            20% { transform: rotate(-.2deg) translate(0px, 0px); }
+            30% { transform: rotate(.4deg) translate(10px, 0px); }
+            40% { transform: rotate(-.1deg) translate(0px, 0px); }
+            50% { transform: rotate(.3deg) translate(10px, 10px); }
+            60% { transform: rotate(-.3deg) translate(0px, 0px); }
+            70% { transform: rotate(.4deg) translate(0px, 0px); }
+            80% { transform: rotate(-.5deg) translate(10px, 0px); }
+            90% { transform: rotate(.2deg) translate(0px, 0px); }
+            100% { transform: rotate(-.2deg) translate(0px, 10px); }
+        }
+        
+    </style>
+</head>
+<body>
+    <canvas id="animationCanvas"></canvas>
+
+    <script src="script.js"></script>
+
+    <button id="st" onclick="if(document.getElementById('config-panel').style.display==`block`){document.getElementById('config-panel').style.display=`none`}else{document.getElementById('config-panel').style.display=`block`}">settings</button>
+
+    <div id="config-panel" style="background: rgba(19, 19, 19, 0.9); padding: 10px; border-radius: 5px;">
+        <h3>Configuration</h3>
+        <label>
+          Number of Objects:
+          <input type="number" id="num-objects" value="50" min="1">
+        </label><br>
+        <label>
+          Min Size:
+          <input type="number" id="size-min" value=".4" step="0.1">
+        </label><br>
+        <label>
+          Max Size:
+          <input type="number" id="size-max" value="2" step="0.1">
+        </label><br>
+        <label>
+          Min Speed (X):
+          <input type="number" id="speed-x-min" value="2" step="0.1">
+        </label><br>
+        <label>
+          Max Speed (X):
+          <input type="number" id="speed-x-max" value="4" step="0.1">
+        </label><br>
+        <label>
+          Min Speed (Y):
+          <input type="number" id="speed-y-min" value="0" step="0.1">
+        </label><br>
+        <label>
+          Max Speed (Y):
+          <input type="number" id="speed-y-max" value="1" step="0.1">
+        </label><br>
+        <label>
+          Depth Blur Strength:
+          <input type="number" id="blur-strength" value="1" step="1">
+        </label><br>
+        <label>
+          Random Hue Shift:
+          <input type="checkbox" id="hue-shift">
+        </label><br>
+        <label>
+          Drop Shadow:
+          <input type="checkbox" id="drop-shadow" checked>
+        </label><br>
+
+        <label>
+            Enable Wrap-Around Mode:
+            <input type="checkbox" id="wrap-around-enabled" checked>
+        </label><br>
+        <label>
+            Wrap-Around Direction:
+            <select id="wrap-direction">
+            <option value="both">Both (Left & Right)</option>
+            <option value="left" selected>Only Left</option>
+            <option value="right">Only Right</option>
+            </select>
+        </label><br>
+        <button id="apply-config">Apply</button>
+      </div>
+      
+</body>
+</html>
