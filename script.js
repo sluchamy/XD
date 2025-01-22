@@ -16,7 +16,7 @@ const CONFIG = {
   BACKGROUND_COLOR: "transparent", // Background color for the canvas
   IMAGE_PATHS: ["bluniewiadomo.png", "yellowpapierz.png", "greenmatematyku.png", "greyzelazko.png", "redjakub.png", "jedynkunakartkowku.png"], // Paths to the images
   RANDOM_HUE_SHIFT: false, // Enable or disable random hue shifts for objects
-  DROP_SHADOW: true, // Enable or disable drop shadows
+  DROP_SHADOW: false, // Enable or disable drop shadows
   WRAP_AROUND_MODE: {
     ENABLED: true, // Enable or disable wrap-around behavior
     DIRECTION: "left", // "left", "right", or "both" for movement direction
