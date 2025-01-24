@@ -14,7 +14,7 @@ const CONFIG = {
   VELOCITY_MULTIPLIER_Y: { min: 0, max: 1 }, // Multiplier for Y velocity
   DEPTH_BLUR_STRENGTH: 1, // Blur strength for depth-of-field effect
   BACKGROUND_COLOR: "transparent", // Background color for the canvas
-  IMAGE_PATHS: ["bluniewiadomo.png", "yellowpapierz.png", "greenmatematyku.png", "greyzelazko.png", "redjakub.png", "jedynkunakartkowku.png"], // Paths to the images
+  IMAGE_PATHS: ["bluniewiadomo.png", "yellowpapierz.png", "greenmatematyku.png", "greyzelazko.png", "redjakub.png", "jedynkunakartkowku.png", "darkgreenkaczek.png", "darkpinkniewiadomo.png", "sraczkowywegiel.png", "whitebraun.png"], // Paths to the images
   RANDOM_HUE_SHIFT: false, // Enable or disable random hue shifts for objects
   DROP_SHADOW: false, // Enable or disable drop shadows
   WRAP_AROUND_MODE: {
